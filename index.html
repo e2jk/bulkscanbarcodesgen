@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bulk Scanner - Barcodes Generator</title>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="print.css" media="print">
+  </head>
+
+  <body>
+    <h1>Bulk Scanner - Barcodes Generator</h1>
+
+    <section id="parameters">
+      <div>
+        <label for="patientID">Patient ID</label>
+        <input type="text" id="patientID" readonly="readonly" value="[PATIENT ID]">
+      </div>
+
+      <div>
+        <label for="visitID">Visit ID</label>
+        <input type="text" id="visitID" readonly="readonly" value="[VISIT ID]">
+      </div>
+
+      <div>
+        <label for="departmentID">Department ID</label>
+        <select id="departmentID">
+          <!-- Populated programatically in bulkscanbarcodesgen.js -->
+        </select>
+      </div>
+
+      <div>
+        <label for="documentType">Document Type</label>
+        <select id="documentType">
+          <!-- Populated programatically in bulkscanbarcodesgen.js -->
+        </select>
+      </div>
+
+      <div>
+        <button id="printButton">Print barcodes</button>
+      </div>
+    </section>
+
+    <section id="barcodes">
+      <div id="patientID_barcode"></div>
+      <div id="visitID_barcode"></div>
+      <div id="departmentID_barcode"></div>
+      <div id="documentType_barcode"></div>
+    </section>
+
+    <!-- JavaScript by default at the bottom of the body, per
+    https://developers.google.com/apps-script/guides/html/best-practices#load_javascript_last -->
+    <script type="text/javascript" src="connectcode-javascript-code128b.js"></script>
+    <script type="text/javascript" src="data.js"></script>
+    <script type="text/javascript" src="bulkscanbarcodesgen.js"></script>
+  </body>
+</html>
